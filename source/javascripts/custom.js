@@ -24,3 +24,8 @@ directionNav: false
 	} catch (err) {
 
 	}
+
+	$('.counter').counterUp({
+    delay: 100,
+    time: 5000
+});

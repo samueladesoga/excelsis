@@ -1,0 +1,27 @@
+    <div class="page-head">
+            <div class="container">
+                <h2>Courses</h2>
+            </div>
+    </div>
+    <div class="l-courses">
+        <div class="container">
+            <% data.contentful.service.each do |id, service| %>
+                 <%#= service['name'] %>
+            <%# end %>
+            <!-- images/it.jpg, images/medi.jpg, images/farm.jpg -->
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <img src="images/it.jpg" class="img-responsive full-img" alt="">
+                    <div class="c-desc">
+                        <h3><%= service['name'].slice(0, 18) %>...</h3>
+                        <h4><%= service['sector'] %></h4>
+                        <p>
+                            <%#= service['description'] %>
+                        </p>
+                        <a href="#" class="btn btn-default">
+                            View carousel
+                        </a>
+                    </div>
+                </div>
+                <% end %>
+        </div>
+    </div>
