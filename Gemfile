@@ -10,5 +10,5 @@ gem 'contentful_middleman'
 # Hide secrets in .env file
 gem 'dotenv'
 
-
+gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
