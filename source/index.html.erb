@@ -152,21 +152,21 @@
                         <h2 class="section-title"><strong>Get</strong> in touch</h2>
                         <p class="lead">Contact us  to find our more about our courses</p>
                         <div style="height: 30px"></div>
-                        <form>
+                        <form method="post" action="thankyou" netlify>
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Name">
+                                        <input type="text" class="form-control" placeholder="Name" name="name" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Email">
+                                        <input type="text" class="form-control" placeholder="Email" name="email" required>
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control" placeholder="Message" rows="5"></textarea>
+                                        <textarea class="form-control" name="message" placeholder="Message" rows="5" required></textarea>
                                     </div>
                                 </div>
                                 <div class="col-sm-12 text-left">
-                                    <button type="button" class="btn btn-blue btn-lg">Submit</button>
+                                    <button type="submit" class="btn btn-blue btn-lg">Submit</button>
                                 </div>
                             </div>
                         </form>

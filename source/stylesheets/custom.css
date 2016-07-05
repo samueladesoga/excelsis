@@ -1,0 +1,11 @@
+#thank-you {
+	 border: 2px solid black;
+}
+.thank-you {
+	padding-top: 10%;
+	padding-bottom: 10%;
+}
+
+#thank-you > h2 {
+	padding-top: 2%;
+}
