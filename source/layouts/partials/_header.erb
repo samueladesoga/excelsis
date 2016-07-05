@@ -10,9 +10,9 @@
                         </ul>
                     </div>
                   <div class="col-sm-8 text-right">
-                      <a href="#">
+                      <% link_to('/resource.html') do %>
                           Admission open for 2016 click here to <span>Get form</span>
-                      </a>
+                      <% end %>
                   </div>
               </div>
           </div>
@@ -32,10 +32,10 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="index.html">Home</a></li>
+                        <li><% link_to('/index.html') do %>Home<% end %></li>
                         <!--<li class="active"><a href="about.html">About</a></li> -->
                         <li><% link_to('/about.html') do %>About<% end %></li>
-                        <li><% link_to('/service.html', { :class => 'main-link color-five', :"data-icon" => 'd' }) do %>Services<% end %></li>
+                        <li><% link_to('/service.html') do %>Service<% end %></li>
                         <li><% link_to('/partner.html') do %>Partner<% end %></li>
                         <li><a href="/affiliated_company.html">Affiliates</a></li>
                         <li><% link_to('/contact.html') do %>Contact<% end %></li>
