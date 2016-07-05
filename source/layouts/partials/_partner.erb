@@ -7,16 +7,16 @@
                 <div style="height: 40px"></div>
                 <!-- person yellow red green blue -->
                 <div class="row">
-                <% count = 1 %>
+                <% i = 1 %>
                 <% data.contentful.partner.each do |id, partner| %>
                     <div class="col-sm-4 text-center">
-                    <% if count == 1 %>
+                    <% if i == 1 %>
                         <div class="person yellow">
-                    <% elsif count == 2 %>
+                    <% elsif i == 2 %>
                         <div class="person red">
-                    <% elsif count == 3 %>
+                    <% elsif i == 3 %>
                         <div class="person green">
-                    <% elsif count == 4 %>
+                    <% elsif i == 4 %>
                         <div class="person blue" >
                     <% else %>
                         <div class="person">
@@ -31,7 +31,7 @@
                         </ul>
                         </div>
                     </div>
-                    <% count = count + 1 %>
+                    <% i += 1 %>
                 <% end %>
                 </div>
             </div>

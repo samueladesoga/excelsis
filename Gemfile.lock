@@ -131,6 +131,8 @@ GEM
     tilt (1.4.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2016.5)
+      tzinfo (>= 1.0.0)
     uber (0.0.15)
     uglifier (2.7.2)
       execjs (>= 0.3.0)
@@ -149,6 +151,7 @@ DEPENDENCIES
   contentful_middleman
   dotenv
   middleman (~> 3.4.0)
+  tzinfo-data
   wdm (>= 0.1.0)
 
 BUNDLED WITH
