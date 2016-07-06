@@ -1,38 +1,31 @@
-        <div class="our-teachers">
+        <div class="page-head">
             <div class="container">
-                <h2 class="section-title"><strong><%= data.contentful['misc']['1ptS2iQPlCccUkcigcgiSA']['name'].split.first %></strong> <%= data.contentful['misc']['1ptS2iQPlCccUkcigcgiSA']['name'].split(' ')[1..-1].join(' ') %></h2>
-                <p>
-                    <%= data.contentful['misc']['1ptS2iQPlCccUkcigcgiSA']['description'] %>
-                </p>
-                <div style="height: 40px"></div>
-                <!-- person yellow red green blue -->
-                <div class="row">
-                <% i = 1 %>
-                <% data.contentful.partner.each do |id, partner| %>
-                    <div class="col-sm-4 text-center">
-                    <% if i == 1 %>
-                        <div class="person yellow">
-                    <% elsif i == 2 %>
-                        <div class="person red">
-                    <% elsif i == 3 %>
-                        <div class="person green">
-                    <% elsif i == 4 %>
-                        <div class="person blue" >
-                    <% else %>
-                        <div class="person">
-                    <% end %>
-                        <img src="images/t-1.jpg" class="img-responsive auto-img" alt="">
-                        <h4><%= partner['firstname'] %> <%= partner['lastname'] %></h4>
-                        <p>Position</p>
-                        <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
+                <h2><strong><%= data.contentful['misc']['1ptS2iQPlCccUkcigcgiSA']['name'].split.first %></strong> <%= data.contentful['misc']['1ptS2iQPlCccUkcigcgiSA']['name'].split(' ')[1..-1].join(' ') %></h2>
+            </div>
+        </div>
+        <div class="container meet-the-team">
+        <p><%= data.contentful['misc']['1ptS2iQPlCccUkcigcgiSA']['description'] %></p>
+            <div class="row">
+            <% data.contentful.partner.each do |id, partner| %>
+                <div class="col-md-3 col-sm-6 person-col">
+                    <div class="person-box">
+                        <img src="images/team1.jpg" alt="" class="img-responsive">
+                        <div class="person-overlay">
+                            <h4><%= partner['firstname'] %> <%= partner['lastname'] %></h4>
+                            <span>Position</span>
                         </div>
+
                     </div>
-                    <% i += 1 %>
-                <% end %>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                    </p>
+                    <ul class="list-inline">
+                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                        <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
+                        <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                    </ul>
                 </div>
+                <% end %>
             </div>
         </div>

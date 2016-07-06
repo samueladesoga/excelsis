@@ -74,3 +74,72 @@
 {
     margin: 0 0 11px;
 }
+
+p#banner-box {
+	line-height: 0.7em;
+	display: block;
+	width: 90%;
+}
+
+p#banner-box small {
+    font-size: 60%;
+}
+
+.banner p {
+	margin: 20px 0;
+}
+
+.banner li{
+	list-style-type: none;
+}
+
+.person-box{
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.person-box img{
+    width: 100%;
+}
+.person-overlay{
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+}
+.person-overlay h4 {
+    background: #41bedd;
+    color: #fff;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    margin-bottom: -3px;
+}
+.person-overlay span {
+    display: inline-block;
+    background: #333;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    width: 70px;
+    padding: 0px 12px;
+    color: #fff;
+}
+.person-col{
+    margin-bottom: 30px;
+}
+.person-col .list-inline li a{
+    font-size: 25px;
+    color: #999;
+    display: block;
+}
+.person-col .list-inline li a:hover{
+    font-size: 25px;
+    color:  #41bedd;
+}
+
+.affiliate-row li {
+    padding: 10px 15px;
+    border: 2px solid #eee;
+    margin: 10px 15px;
+}

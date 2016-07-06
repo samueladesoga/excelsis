@@ -6,12 +6,12 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-5">
-                            <h1>Education
-                                for Better Future</h1>
+                            <!--<h1>Education
+                                for Better Future</h1> -->
                             <p>
-                                Lorem Ipsum is simply dummy text of the 
-                                printing and typesetting industry. 
+                               <strong> Committed to the transformation of organisations, community and individual. </strong>
                             </p>
+                            <p id="banner-box"><small>At Excelsis we are committed to making a difference in your world of performance, productivity and customer satisfaction.</small></p>
                             <li><% link_to('/service.html', { :class => 'btn btn-white btn-lg'}) do %>View Services<% end %></li>
                         </div>
                     </div>
@@ -25,14 +25,11 @@
                         <img src="images/cap.png" class="img-responsive auto-img" alt="">
                     </div>
                     <div class="col-sm-7">
-                        <h2 class="section-title"><strong>Welcome</strong> at our College</h2>
+                        <h2 class="section-title"><strong><%= data.contentful.misc['5EQFAxOOUoGwKwoqSsMWuw']['name'].split.first %></strong> <%= data.contentful.misc['5EQFAxOOUoGwKwoqSsMWuw']['name'].split(' ')[1..-1].join(' ') %></h2>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
+                            <%= data.contentful.misc['5EQFAxOOUoGwKwoqSsMWuw']['description'] %>
                         </p>
-                        <p>
-                            But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
-                        <a href="#" class="btn btn-gray">visit our campus</a>
+                        <% link_to('/contact.html', { :class => 'btn btn-gray'}) do %>Contact Us<% end %>
                     </div>
                 </div>
             </div>
@@ -72,106 +69,15 @@
                 <div class="row">
                     <div class="col-md-2 col-sm-4 col-xs-6">
                         <i class="fa fa-money"></i>
-                        <h3>Finance</h3>
+                        <h3>Private</h3>
                     </div>
                     <div class="col-md-2 col-sm-4 col-xs-6">
                         <i class="fa fa-medkit"></i>
-                        <h3>Medical</h3>
-                    </div>
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <i class="fa fa-laptop"></i>
-                        <h3>Technologies</h3>
-                    </div>
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <i class="fa fa-leaf"></i>
-                        <h3>Agriculture</h3>
-                    </div>
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <i class="fa fa-user"></i>
-                        <h3>Management</h3>
-                    </div>
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <i class="fa fa-signal"></i>
-                        <h3>Economics</h3>
+                        <h3>Public</h3>
                     </div>
                 </div>
             </div>
         </div>
-
-		<%= partial "/layouts/partials/partner" %>
-
-
-        <div class="course-reserve">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <img src="images/open.png" alt="" class="img-responsive">
-                    </div>
-                    <div class="col-sm-8">
-                        <h2 class="section-title"><strong>Course</strong> Reservation</h2>
-
-                        <form>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Name">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Email">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Select Course">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Reservation Date">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Phone">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="7 Students">
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 text-center">
-                                    <button type="button" class="btn btn-blue btn-lg">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-		<%= partial "layouts/partials/skill_and_event" %>
         <%= partial "layouts/partials/testimonial" %>
-        <div class="get-in-touch">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="section-title"><strong>Get</strong> in touch</h2>
-                        <p class="lead">Contact us  to find our more about our courses</p>
-                        <div style="height: 30px"></div>
-                        <%= partial "layouts/partials/contact" %>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="map">
-                            <div id="map" style="height: 300px; width: 100%;"></div>
-                        </div>
-                        <div style="height: 30px"></div>
-                        <div class="row">
-                            <div class="col-sm-8">
-                                <h5>Contact us</h5>
-                                <p><i class="fa fa-map-marker"></i> Address : Street Name City Name Country</p>
-                                <p><i class="fa fa-phone-square"></i> Phone: 12-1234-5678</p>
-                                <p><i class="fa fa-envelope"></i> Email: info@website.com</p>
-                            </div>
-                            <div class="col-sm-4">
-                                <h5>Opening hours</h5>
-                                <p>Monday to Friday<br>9.00 AM to 6.00 PM</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div style="height: 100px;"></div>
+		<%= partial "/layouts/partials/affiliate_company" %>
