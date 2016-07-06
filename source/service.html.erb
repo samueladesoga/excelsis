@@ -3,25 +3,41 @@
                 <h2>Our Services</h2>
             </div>
     </div>
-    <div class="l-courses">
-        <div class="container">
-            <% data.contentful.service.each do |id, service| %>
-                 <%#= service['name'] %>
-            <%# end %>
-            <!-- images/it.jpg, images/medi.jpg, images/farm.jpg -->
-                <div class="col-sm-12 col-md-6 col-lg-3">
-                    <img src="images/it.jpg" class="img-responsive full-img" alt="">
-                    <div class="c-desc">
-                        <h3><%= service['name'].slice(0, 18) %>...</h3>
-                        <h4><%= service['sector'] %></h4>
-                        <p>
-                            <%#= service['description'] %>
-                        </p>
-                        <a href="#" class="btn btn-default">
-                            View carousel
-                        </a>
+   <div class="container">
+       <div class="row">
+            <div>
+        <ul class="filter list-inline">
+                    <li><a class="active" href="#" data-filter="*">Show All</a></li>
+                    <li><a href="#" data-filter=".private">Private</a></li>
+                    <li><a href="#" data-filter=".public">Public</a></li>
+
+        </ul>
+    <div id="services" class="row list-group iso-call">
+        <% data.contentful.service.each do |id, service| %>
+        <div class="item  col-xs-4 col-lg-4 list-group-item <%= service['sector'] %>">
+            <div class="thumbnail">
+                <!--<img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" /> -->
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading">
+                        <%= service['name'] %></h4>
+                    <p class="group inner list-group-item-text">
+                        <%= service['description'] %></p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                <%= service['sector'] %></p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                           <p><%= service['type'] %></p>
+                        </div>
                     </div>
                 </div>
-                <% end %>
+            </div>
         </div>
+        <% end %>
     </div>
+
+    </div>
+
+       </div>
+   </div>
