@@ -34,10 +34,14 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><% link_to('/index.html') do %>Home<% end %></li>
                         <!--<li class="active"><a href="about.html">About</a></li> -->
-                        <li><% link_to('/about.html') do %>About<% end %></li>
-                        <li><% link_to('/service.html') do %>Services<% end %></li>
+                        <li><% link_to('/about.html') do %>About<% end %></li>      
                         <li><% link_to('/partner.html') do %>Partners<% end %></li>
-                       <li><% link_to('/affiliate.html') do %>Affiliates<% end %></li>
+                       <li class="dropdown"><a class="dropdown-toggle" aria-expanded="false" href="#" data-toggle="dropdown">Training<i class="fa fa-angle-down"></i></a>
+                          <ul class="dropdown-menu">
+                            <li><% link_to('/service.html') do %>Services<% end %></li>
+                            <li><% link_to('/course.html') do %>Courses<% end %></li>
+                          </ul>
+                        </li>
                         <li><% link_to('/contact.html') do %>Contact<% end %></li>
                     </ul>
                 </div><!--/.nav-collapse -->

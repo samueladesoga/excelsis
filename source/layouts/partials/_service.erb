@@ -1,0 +1,51 @@
+<!-- Get filenames of files ound in service directory and put it in array -->
+<%# files = Dir.entries("data/contentful/service").reject {|f| File.directory?(f) || f[0].include?('.')} %>
+<!-- Remove file extension from returned array-->
+<%# files.map!{|x| x.split('.').first} %>
+   <div class="container">
+       <div class="row">
+            <div>
+        <ul class="filter list-inline">
+                    <li><a class="active" href="#" data-filter="*">Show All</a></li>
+                    <li><a href="#" data-filter=".private">Private</a></li>
+                    <li><a href="#" data-filter=".public">Public</a></li>
+
+        </ul>
+    <div id="services" class="row list-group iso-call">
+        <% data.contentful.service.each do |id, service| %>
+        <div class="item  col-xs-4 col-lg-4 list-group-item <%= service['sector'] %>">
+            <div class="thumbnail">
+                <!--<img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" /> -->
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading">
+                        <%= service['name'] %></h4>
+                    <p class="group inner list-group-item-text">
+                    <% if service['description'].to_s.length >= 350 %>
+                    <ul>
+                    <% s = service['description'].to_s %>
+                        <% s.scan(/[^\.!?]+[\.!?]/).map(&:strip).each do |sentence|  %>
+                        <li><%= sentence %></li>
+                        <% end %>
+                    </ul>
+                    <% else %>
+                        <%= service['description'] %></p>
+                    <% end %>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                <%= service['sector'] %></p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                           <p><%= service['type'] %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+
+    </div>
+
+       </div>
+   </div>

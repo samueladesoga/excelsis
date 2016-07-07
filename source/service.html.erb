@@ -3,41 +3,19 @@
                 <h2>Our Services</h2>
             </div>
     </div>
-   <div class="container">
-       <div class="row">
-            <div>
-        <ul class="filter list-inline">
-                    <li><a class="active" href="#" data-filter="*">Show All</a></li>
-                    <li><a href="#" data-filter=".private">Private</a></li>
-                    <li><a href="#" data-filter=".public">Public</a></li>
 
-        </ul>
-    <div id="services" class="row list-group iso-call">
-        <% data.contentful.service.each do |id, service| %>
-        <div class="item  col-xs-4 col-lg-4 list-group-item <%= service['sector'] %>">
-            <div class="thumbnail">
-                <!--<img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" /> -->
-                <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                        <%= service['type'] %></h4>
-                    <p class="group inner list-group-item-text">
-                        <%= service['description'] %></p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                                <%= service['sector'] %></p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                           <p><%= service['name'] %></p>
-                        </div>
-                    </div>
+    <div class="intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5"><img src="images/cap.png" class="img-responsive auto-img" alt=""></div>
+                <div class="col-md-7">
+                     <h2 class="section-title"><strong><%= data.contentful['misc']['61JOExFRE4kq0OeYQYc8o0']['name'].split.first %></strong> <%= data.contentful['misc']['61JOExFRE4kq0OeYQYc8o0']['name'].split(' ')[1..-1].join(' ') %></h2>
+                     <p>
+                         <%= data.contentful['misc']['61JOExFRE4kq0OeYQYc8o0']['description'] %>
+                     </p>
                 </div>
             </div>
         </div>
-        <% end %>
     </div>
 
-    </div>
-
-       </div>
-   </div>
+    <%= partial "/layouts/partials/reservation" %>
