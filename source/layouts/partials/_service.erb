@@ -1,51 +1,43 @@
-<!-- Get filenames of files ound in service directory and put it in array -->
-<%# files = Dir.entries("data/contentful/service").reject {|f| File.directory?(f) || f[0].include?('.')} %>
-<!-- Remove file extension from returned array-->
-<%# files.map!{|x| x.split('.').first} %>
-   <div class="container">
-       <div class="row">
-            <div>
-        <ul class="filter list-inline">
-                    <li><a class="active" href="#" data-filter="*">Show All</a></li>
-                    <li><a href="#" data-filter=".private">Private</a></li>
-                    <li><a href="#" data-filter=".public">Public</a></li>
-
-        </ul>
-    <div id="services" class="row list-group iso-call">
-        <% data.contentful.service.each do |id, service| %>
-        <div class="item  col-xs-4 col-lg-4 list-group-item <%= service['sector'] %>">
-            <div class="thumbnail">
-                <!--<img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" /> -->
-                <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                        <%= service['name'] %></h4>
-                    <p class="group inner list-group-item-text">
-                    <% if service['description'].to_s.length >= 350 %>
+<div style="height: 30px"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Public Sector Training</h2>
+            <ul>
+                <li>
+                    <h3><%= data.contentful.service['21DbhP1jMsskQQuSSMU2oW'][:type] %></h3>
                     <ul>
-                    <% s = service['description'].to_s %>
-                        <% s.scan(/[^\.!?]+[\.!?]/).map(&:strip).each do |sentence|  %>
-                        <li><%= sentence %></li>
-                        <% end %>
+                        <li><%= data.contentful.service['lU2eQ6l7BQIwyUAWQsmYw'][:name] %></li>
+                        <li><%= data.contentful.service['21DbhP1jMsskQQuSSMU2oW'][:name] %></li>
                     </ul>
-                    <% else %>
-                        <%= service['description'] %></p>
-                    <% end %>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                                <%= service['sector'] %></p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                           <p><%= service['type'] %></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </li>
+                <li>
+                    <h3><%= data.contentful.service['44P3xpD8m4u0CG2mCy60y6'][:type] %></h3>
+                    <ul>
+                        <li><%= data.contentful.service['44P3xpD8m4u0CG2mCy60y6'][:name] %></li>
+                        <li><%= data.contentful.service['i1o1vLJHe8KsC6qW2UmCu'][:name] %></li>
+                        <li><%= data.contentful.service['57tjrPs4oM4WAKO2mmkAmG'][:name] %></li>
+                        <li><%= data.contentful.service['7xNQhSGXjqwISKMiiGOC84'][:name] %></li>
+                    </ul>
+                </li>
+                <li>
+                    <h3><%= data.contentful.service['2HDoiUx3JeOaWuWiQ0oEaw'][:type]%></h3>
+                    <ul>
+                        <li><%= data.contentful.service['7IBnYtKAZaS8S64EC2MOYm'][:name] %></li>
+                        <li><%= data.contentful.service['2HDoiUx3JeOaWuWiQ0oEaw'][:name] %></li>
+                        <li><%= data.contentful.service['cBew28OXew2weIqG2Kucs'][:name] %></li>
+                    </ul>
+                </li>
+                <li>
+                    <h3><%= data.contentful.service['6FRuYGOd1uMm2gyyQEQ0me']['type'] %></h3>
+                    <ul>
+                        <li><%= data.contentful.service['6FRuYGOd1uMm2gyyQEQ0me'][:name] %></li>
+                        <li><%= data.contentful.service['2l0QRHahuoYMC6mgyAOM8G'][:name] %></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-        <% end %>
+        <div class="col-md-4"></div>
     </div>
-
-    </div>
-
-       </div>
-   </div>
+</div>
+<div style="height: 80px"></div>

@@ -1,3 +1,4 @@
+
  <!-- START HEADER -->
   <!-- START TOPBAR -->
     <div class="top-bar">
@@ -36,9 +37,9 @@
                         <!--<li class="active"><a href="about.html">About</a></li> -->
                         <li class = <%= (current_page.path == 'about.html') ? 'active' : '' %> ><% link_to('/about.html') do %>About<% end %></li>      
                         <li class = <%= (current_page.path == 'partner.html') ? 'active' : '' %> ><% link_to('/partner.html') do %>Partners<% end %></li>
-                       <li class="dropdown <%= (current_page.path == ('service.html' || 'course.html')) ? 'active' : '' %>"><a class="dropdown-toggle" aria-expanded="false" href="#" data-toggle="dropdown">Training<i class="fa fa-angle-down"></i></a>
+                       <li class="dropdown"><a class="dropdown-toggle" aria-expanded="false" href="#" data-toggle="dropdown">Training<i class="fa fa-angle-down"></i></a>
                           <ul class="dropdown-menu">
-                            <li class = <%= (current_page.path == 'service.html') ? 'active' : '' %> ><% link_to('/service.html') do %>Services<% end %></li>
+                            <li class = <%= (current_page.path == 'service.html') ? 'active' : '' %>><% link_to('/service.html') do %>Services<% end %></li>
                             <li class = <%= (current_page.path == 'course.html') ? 'active' : '' %>><% link_to('/course.html') do %>Courses<% end %></li>
                           </ul>
                         </li>
