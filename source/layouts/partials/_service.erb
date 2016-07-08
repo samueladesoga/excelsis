@@ -34,9 +34,22 @@
                     <h2><%= "#{t}" %></h2>
                     <% files.each do |m| %>
                     <% if  data.contentful.service["#{m}"]['type'] == "#{t}" %>
-                    <ul>
-                        <li><%= data.contentful.service["#{m}"]['name'] %></li>
-                    </ul>
+                        <% if data.contentful.service["#{m}"]['description'] %>
+                        <ul>
+                            <li>
+                                <%= data.contentful.service["#{m}"]['name'] %>
+                                <ul>
+                                    <li>
+                                        <%= data.contentful.service["#{m}"]['description'] %>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <% else %>
+                        <ul>
+                            <li><%= data.contentful.service["#{m}"]['name'] %></li>
+                        </ul>
+                        <% end %>
                     <% end %>
                     <% end %>
                 </li>
