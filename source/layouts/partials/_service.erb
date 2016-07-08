@@ -1,43 +1,50 @@
+<!-- Get filenames of files ound in service directory and put it in array -->
+<% files = Dir.entries("data/contentful/service").reject {|f| File.directory?(f) || f[0].include?('.')} %>
+<!-- Remove file extension from returned array-->
+<% files.map!{|x| x.split('.').first} %>
+
+<!-- Collect all types from service folder -->
+<% types = [] %>
+<% files.each do |type| %>
+<%  types << data.contentful.service["#{type}"]['type'] %>
+<% end %>
+
+<!-- remove duplicates from types array -->
+<% types = types.uniq %>
+
+<% sectors = [] %>
+<% files.each do |sector| %>
+<% sectors << data.contentful.service["#{sector}"]['sector'] %>
+<% end %>
+
+<!-- remove duplicates from sectors array -->
+<% sectors = sectors.uniq %>
+
+
+
 <div style="height: 30px"></div>
 <div class="container">
     <div class="row">
+        <% sectors.each do |s| %>
         <div class="col-md-8">
-            <h2>Public Sector Training</h2>
+            <h3><%= "#{s}".humanize %> Sector Training</h3>
             <ul>
+                <% types.each do |t| %>
                 <li>
-                    <h3><%= data.contentful.service['21DbhP1jMsskQQuSSMU2oW'][:type] %></h3>
+                    <h2><%= "#{t}" %></h2>
+                    <% files.each do |m| %>
+                    <% if  data.contentful.service["#{m}"]['type'] == "#{t}" %>
                     <ul>
-                        <li><%= data.contentful.service['lU2eQ6l7BQIwyUAWQsmYw'][:name] %></li>
-                        <li><%= data.contentful.service['21DbhP1jMsskQQuSSMU2oW'][:name] %></li>
+                        <li><%= data.contentful.service["#{m}"]['name'] %></li>
                     </ul>
+                    <% end %>
+                    <% end %>
                 </li>
-                <li>
-                    <h3><%= data.contentful.service['44P3xpD8m4u0CG2mCy60y6'][:type] %></h3>
-                    <ul>
-                        <li><%= data.contentful.service['44P3xpD8m4u0CG2mCy60y6'][:name] %></li>
-                        <li><%= data.contentful.service['i1o1vLJHe8KsC6qW2UmCu'][:name] %></li>
-                        <li><%= data.contentful.service['57tjrPs4oM4WAKO2mmkAmG'][:name] %></li>
-                        <li><%= data.contentful.service['7xNQhSGXjqwISKMiiGOC84'][:name] %></li>
-                    </ul>
-                </li>
-                <li>
-                    <h3><%= data.contentful.service['2HDoiUx3JeOaWuWiQ0oEaw'][:type]%></h3>
-                    <ul>
-                        <li><%= data.contentful.service['7IBnYtKAZaS8S64EC2MOYm'][:name] %></li>
-                        <li><%= data.contentful.service['2HDoiUx3JeOaWuWiQ0oEaw'][:name] %></li>
-                        <li><%= data.contentful.service['cBew28OXew2weIqG2Kucs'][:name] %></li>
-                    </ul>
-                </li>
-                <li>
-                    <h3><%= data.contentful.service['6FRuYGOd1uMm2gyyQEQ0me']['type'] %></h3>
-                    <ul>
-                        <li><%= data.contentful.service['6FRuYGOd1uMm2gyyQEQ0me'][:name] %></li>
-                        <li><%= data.contentful.service['2l0QRHahuoYMC6mgyAOM8G'][:name] %></li>
-                    </ul>
-                </li>
+                <% end %>
             </ul>
         </div>
-        <div class="col-md-4"></div>
+        <% end %>
     </div>
 </div>
+
 <div style="height: 80px"></div>
