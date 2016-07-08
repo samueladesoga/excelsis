@@ -35,6 +35,14 @@
                     <% files.each do |m| %>
                     <% if  data.contentful.service["#{m}"]['type'] == "#{t}" %>
                         <% if data.contentful.service["#{m}"]['description'] %>
+                            <% if data.contentful.service["#{m}"]['description'].to_s.length >= 350 %>
+                                <ul>
+                                <% s = data.contentful.service["#{m}"]['description'].to_s %>
+                                    <% s.scan(/[^\.!?]+[\.!?]/).map(&:strip).each do |sentence|  %>
+                                    <li><%= sentence %></li>
+                                    <% end %>
+                                </ul>
+                            <% else %>
                         <ul>
                             <li>
                                 <%= data.contentful.service["#{m}"]['name'] %>
@@ -45,6 +53,7 @@
                                 </ul>
                             </li>
                         </ul>
+                            <%end %>
                         <% else %>
                         <ul>
                             <li><%= data.contentful.service["#{m}"]['name'] %></li>
