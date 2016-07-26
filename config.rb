@@ -67,9 +67,24 @@ Dotenv.load
 # Helpers
 ###
 
+activate :s3_sync do |s3_sync|
+  s3_sync.bucket                     = ENV['BUCKET_NAME'] # The name of the S3 bucket you are targetting. This is globally unique.
+  s3_sync.region                     = 'eu-west-1'     # The AWS region for your bucket.
+  s3_sync.aws_access_key_id          = ENV['ACCESS_KEY_ID']
+  s3_sync.aws_secret_access_key      = ENV['SECRET_ACCESS_KEY']
+  s3_sync.delete                     = false # We delete stray files by default.
+  s3_sync.after_build                = false # We chain after the build step by default. This may not be your desired behavior…
+  s3_sync.prefer_gzip                = true
+  s3_sync.path_style                 = true
+  s3_sync.reduced_redundancy_storage = false
+  s3_sync.acl                        = 'public-read'
+  s3_sync.encryption                 = false
+end
+
 activate :contentful do |f|
   f.space         = { contentful: ENV['CONTENTFUL_SPACE'] }
   f.access_token  = ENV['CONTENTFUL_ACCESS_TOKEN']
+  f.rebuild_on_webhook = true
   #f.cda_query     = { content_type: ENV['CONTENTFUL_POST'], include: 1 }
   f.cda_query = { limit: 1000 }
   f.content_types = {partner: ENV['CONTENTFUL_PARTNERS'],

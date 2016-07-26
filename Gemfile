@@ -7,6 +7,7 @@ gem 'middleman', '~>3.4.0'
 
 # Contentful integration
 gem 'contentful_middleman'
+gem 'middleman-s3_sync'
 
 # Hide secrets in .env file
 gem 'dotenv'
