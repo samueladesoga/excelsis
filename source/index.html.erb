@@ -19,15 +19,12 @@
         <div class="intro">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-5">
-                        <img src="images/cap.png" class="img-responsive auto-img" alt="">
-                    </div>
-                    <div class="col-sm-7">
+                    <div class="col-sm-12">
                         <h2 class="section-title"><strong><%= data.contentful.misc['5EQFAxOOUoGwKwoqSsMWuw']['name'].split.first %></strong> <%= data.contentful.misc['5EQFAxOOUoGwKwoqSsMWuw']['name'].split(' ')[1..-1].join(' ') %></h2>
                         <p>
                             <%= data.contentful.misc['5EQFAxOOUoGwKwoqSsMWuw']['description'] %>
                         </p>
-                        <% link_to('/contact.html', { :class => 'btn btn-gray'}) do %>Contact Us<% end %>
+                        <% link_to('/contact.html', { :class => 'btn btn-gray'}) do %>Find out more<% end %>
                     </div>
                 </div>
             </div>
@@ -35,15 +32,16 @@
 
         <div class="popular-sectors">
             <div class="container">
-                <h2 class="section-title"><strong>Popular</strong> sectors</h2>
+                <h2 class="section-title"><strong>Training</strong> categories</h2>
                 <div class="row">
-                    <div class="col-md-2 col-sm-4 col-xs-6">
+                    <p>We offer a wide range of training services and they could fall into one or more categories below. Click on the icons below to find out more about the training courses we offer.</p>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <i class="fa fa-money"></i>
-                        <h3>Private</h3>
+                        <h3>Hr Learning and Development</h3>
                     </div>
-                    <div class="col-md-2 col-sm-4 col-xs-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <i class="fa fa-medkit"></i>
-                        <h3>Public</h3>
+                        <h3>Education and Training</h3>
                     </div>
                 </div>
             </div>
