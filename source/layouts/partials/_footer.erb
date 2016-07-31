@@ -2,39 +2,22 @@
        <footer class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-md-4">
                         <h3>Quick links</h3>
                         <ul class="list-unstyled">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Courses</a></li>
-                            <li><a href="#">F.A.Q</a></li>
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Terms</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><% link_to('/index.html') do %>Home<% end %></li>
+                            <li><% link_to('/about.html') do %>About<% end %></li>
+                            <li><% link_to('/partner.html') do %>Partners<% end %></li>
+                            <li><% link_to('/contact.html') do %>Contact<% end %></li>
                         </ul>
+                    </div>
+                    <div class="col-md-4 white">
+                                <h5>Contact us</h5>
+                                <p><i class="fa fa-map-marker"></i> Address : 233/16 B East Adama Road 2nd Floor, Tesano, Accra, Ghana</p>
+                                <p><i class="fa fa-phone-square"></i> Phone: +233.26.555.7932</p>
+                                <p><i class="fa fa-envelope"></i> Email: info@excelsis.com</p>
                     </div>
                     <div class="col-md-4">
-                        <h3>Latest courses</h3>
-                        <ul class="list-unstyled aside-thumbs">
-                            <li class="clearfix">
-                                <a href="#"><img src="images/thumb-1.jpg" alt=""></a>
-                                <div class="f-content">
-                                    <h4>Admission open for 2016</h4>
-                                    <span>Posted on Dec 21</span>
-                                    <p>Lorem ispum dummy</p>
-                                </div>
-                            </li>
-                            <li class="clearfix">
-                                <a href="#"><img src="images/thumb-2.jpg" alt=""></a>
-                                <div class="f-content">
-                                    <h4>Admission open for 2016</h4>
-                                    <span>Posted on Dec 21</span>
-                                    <p>Lorem ispum dummy</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
                         <h3>Follow us</h3>
                         <ul class="list-inline social">
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -51,7 +34,7 @@
       <div class="container">
           <div class="row">
               <div class="col-sm-12 text-center">
-                  <span>&copy; 2016 College. All right reserved.</span>
+                  <span class="white">&copy; <%= Time.now.year %> Excelsis. All right reserved.</span>
               </div>
           </div>
       </div>

@@ -1,38 +1,14 @@
-<!-- Get filenames of files ound in service directory and put it in array -->
-<% files = Dir.entries("data/contentful/service").reject {|f| File.directory?(f) || f[0].include?('.')} %>
-<!-- Remove file extension from returned array-->
-<% files.map!{|x| x.split('.').first} %>
-
-<!-- Collect all types from service folder -->
-<% types = [] %>
-<% files.each do |type| %>
-<%  types << data.contentful.service["#{type}"]['type'] %>
-<% end %>
-
-<!-- remove duplicates from types array -->
-<% types = types.uniq %>
-
-<% sectors = [] %>
-<% files.each do |sector| %>
-<% sectors << data.contentful.service["#{sector}"]['sector'] %>
-<% end %>
-
-<!-- remove duplicates from sectors array -->
-<% sectors = sectors.uniq %>
-
-
-
 <div style="height: 30px"></div>
 <div class="container">
     <div class="row">
-        <% sectors.each do |s| %>
+        <% @sectors.each do |s| %>
         <div class="col-md-8">
             <h3><%= "#{s}".humanize %> Sector Training</h3>
             <ul>
-                <% types.each do |t| %>
+                <% @types.each do |t| %>
                 <li>
                     <h2><%= "#{t}" %></h2>
-                    <% files.each do |m| %>
+                    <% @files.each do |m| %>
                     <% if  data.contentful.service["#{m}"]['type'] == "#{t}" %>
                         <% if data.contentful.service["#{m}"]['description'] %>
                             <% if data.contentful.service["#{m}"]['description'].to_s.length >= 350 %>

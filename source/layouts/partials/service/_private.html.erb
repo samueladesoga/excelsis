@@ -1,0 +1,85 @@
+<% @files = Dir.entries("data/contentful/service").reject {|f| File.directory?(f) || f[0].include?('.')} %>
+<!-- # Remove file extension from returned array -->
+<% @files.map!{|x| x.split('.').first} %>
+
+<!--# Collect all types from service folder -->
+<% @types = [] %>
+<% @files.each do |type| %>
+<% @types << data.contentful.service["#{type}"]['type'] %>
+<% end %>
+
+<!-- # remove duplicates from types array -->
+<% @types = @types.uniq %>
+
+<% @sectors = [] %>
+<% @files.each do |sector| %>
+<% @sectors << data.contentful.service["#{sector}"]['sector'] %>
+<% end %>
+
+<!-- # remove duplicates from sectors array -->
+<% @sectors = @sectors.uniq %>
+
+<% @private_types = [] %>
+
+<!-- # separate types by sectors -->
+<% @files.each do |separate_type| %>
+
+<%  if  data.contentful.service["#{separate_type}"]['sector'] == @sectors.last %>
+    <% @private_types << data.contentful.service["#{separate_type}"]['type'] %>
+  <% end %>
+
+<% end %>
+<!-- # remove duplicates from various types -->
+<% @private_types = @private_types.uniq %>
+
+<div style="height: 30px"></div>
+<div class="container">
+    <div class="row">
+        <!--Sector start -->
+        <%# @sectors.each do |s| %>
+        <div class="col-md-8">
+            <h3>Education and Training</h3>
+            <!--<h4><%#= "#{@sectors.first}".humanize %> Sector Training</h4> -->
+            <ul>
+                <% @private_types.each do |t| %>
+                <li class="list-unstyled">
+                    <h4><%= "#{t}" %></h4>
+                    <% @files.each do |m| %>
+                    <% if data.contentful.service["#{m}"]['type'] == "#{t}" %>
+                        <% if data.contentful.service["#{m}"]['description'] %>
+                            <% if data.contentful.service["#{m}"]['description'].to_s.length >= 350 %>
+                                <ul>
+                                <% s = data.contentful.service["#{m}"]['description'].to_s %>
+                                    <% s.scan(/[^\.!?]+[\.!?]/).map(&:strip).each do |sentence|  %>
+                                    <li><%= sentence %></li>
+                                    <% end %>
+                                </ul>
+                            <% else %>
+                        <ul>
+                            <li>
+                                <%= data.contentful.service["#{m}"]['name'] %>
+                                <ul>
+                                    <li>
+                                        <%= data.contentful.service["#{m}"]['description'] %>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                            <%end %>
+                        <% else %>
+                        <ul>
+                            <li><%= data.contentful.service["#{m}"]['name'] %></li>
+                        </ul>
+                        <% end %>
+                    <% end %>
+                    <% end %>
+                </li>
+                <% end %>
+            </ul>
+        </div>
+        <%# end %>
+    <!-- Sector end -->
+    </div>
+</div>
+
+<div style="height: 80px"></div>

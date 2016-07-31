@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800);
 body {
   font-weight: 400;
-  color: #9a9a9a;
+  color: #2e2e2e;
   font-size: 14px;
   font-family: 'Raleway', sans-serif;
   line-height: 24px; }
@@ -155,8 +155,10 @@ h1, h2, h3, h4, h5, h6 {
     color: #93daf4;
     font-size: 60px; }
 
-.popular-sectors {
-  padding: 60px 0; }
+.affiliates, .popular-sectors {
+  padding: 60px 0; 
+  background-color: #eee;
+  }
   .popular-sectors i {
     background-color: #0ca4d0;
     width: 120px;
@@ -227,7 +229,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .testimonials {
   padding: 50px 0;
-  background-color: #eee;
   overflow: hidden;
   position: relative; }
 
@@ -402,5 +403,6 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 0px;
     -webkit-border-radius: 0px;
     border: 0px; }
+.white{color:white;}
 
 /*# sourceMappingURL=style.css.map */

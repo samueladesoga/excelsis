@@ -9,7 +9,7 @@
             <% data.contentful.partner.each do |id, partner| %>
                 <div class="col-md-3 col-sm-6 person-col">
                     <div class="person-box">
-                        <img src="images/team1.jpg" alt="" class="img-responsive">
+                        <%= image_tag("team1.jpg", alt:"", class:"img-responsive") %>
                         <div class="person-overlay">
                             <h4><%= partner['firstname'] %> <%= partner['lastname'] %></h4>
                             <span>Position</span>
