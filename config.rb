@@ -14,30 +14,6 @@ Dotenv.load
 # Page options, layouts, aliases and proxies
 ###
 
-# Test if contentful data exists
-
-
-# if data.respond_to? :contentful
-#   data.contentful.partner.each do |id, partner|
-#     proxy "/partners/#{partner['slug']}.html", '/partner.html', locals: {partner: partner}
-#   end
-
-#   data.contentful.affiliated_company.each do |id, affiliated_company|
-#     proxy "/affiliated_companies/#{affiliated_company['slug']}.html", '/affiliated_company.html', locals: {affiliated_company: affiliated_company}
-#   end
-
-#   data.contentful.misc.each do |id, misc|
-#     proxy "/misc/#{misc['slug']}.html", '/misc.html', locals: {misc: misc}
-#   end
-
-#   data.contentful.service.each do |id, service|
-#     proxy "/services/#{service['slug']}.html", '/service.html', locals: {service: service}
-#   end
-
-#   data.contentful.testimonial.each do |id, testimonial|
-#     proxy "/testimonials/#{testimonial['slug']}.html", '/testimonial.html', locals: {testimonial: testimonial}
-#   end
-# end
 
 
 # ignore '/partner.html'
@@ -72,7 +48,7 @@ activate :s3_sync do |s3_sync|
   s3_sync.region                     = 'eu-west-1'     # The AWS region for your bucket.
   s3_sync.aws_access_key_id          = ENV['ACCESS_KEY_ID']
   s3_sync.aws_secret_access_key      = ENV['SECRET_ACCESS_KEY']
-  s3_sync.delete                     = false # We delete stray files by default.
+  s3_sync.delete                     = true # We delete stray files by default.
   s3_sync.after_build                = false # We chain after the build step by default. This may not be your desired behavior…
   s3_sync.prefer_gzip                = true
   s3_sync.path_style                 = true
@@ -95,7 +71,7 @@ end
 
 # Pretty URLs (https://middlemanapp.com/advanced/pretty_urls/)
 #activate :directory_indexes
-set :trailing_slash, false
+#set :trailing_slash, false
 
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
