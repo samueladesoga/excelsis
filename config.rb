@@ -66,7 +66,8 @@ activate :contentful do |f|
   f.content_types = {partner: ENV['CONTENTFUL_PARTNERS'],
                       affiliated_company: ENV['CONTENTFUL_AFFILIATED_COMPANIES'],
                       misc: ENV['CONTENTFUL_MISC'], service: ENV['CONTENTFUL_SERVICES'],
-                      testimonial: ENV['CONTENTFUL_TESTIMONIAL'], skill: ENV['CONTENTFUL_SKILL'] }
+                      testimonial: ENV['CONTENTFUL_TESTIMONIAL'], skill: ENV['CONTENTFUL_SKILL'], 
+                      asset: ENV['CONTENTFUL_ASSET']}
 end
 
 # Pretty URLs (https://middlemanapp.com/advanced/pretty_urls/)

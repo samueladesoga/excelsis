@@ -5,27 +5,24 @@
         </div>
         <div class="container meet-the-team">
         <p><%= data.contentful['misc']['1ptS2iQPlCccUkcigcgiSA']['description'] %></p>
-            <div class="row">
             <% data.contentful.partner.each do |id, partner| %>
+            <div class="row">           
                 <div class="col-md-3 col-sm-6 person-col">
                     <div class="person-box">
-                        <%= image_tag("team1.jpg", alt:"", class:"img-responsive") %>
+                        <% url = partner['photograph'].nil? ? 'team1.jpg' : "http:" + partner['photograph']['url'] %>
+                        <%= image_tag("#{url}", alt:"", class:"img-responsive") %>
                         <div class="person-overlay">
                             <h4><%= partner['firstname'] %> <%= partner['lastname'] %></h4>
-                            <span>Position</span>
+                            <span><%= partner['position'] %></span>
                         </div>
 
                     </div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-                    </p>
-                    <ul class="list-inline">
-                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                        <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
-                        <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                    </ul>
                 </div>
-                <% end %>
+                <div>
+                    <p class="col-md-12">
+                        <%= partner['profile'] %> 
+                    </p>
+                </div>                
             </div>
+            <% end %>
         </div>
