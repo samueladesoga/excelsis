@@ -1,13 +1,14 @@
-
-<% @private_services = data["contentful"]["service"].values.find_all{|serv|serv["sector"] == "private"}.group_by{|v|v["type"]} %>
+<% @public_services = data["contentful"]["service"].values.find_all{|serv|serv["sector"] == "private"}.group_by{|v|v["type"]} %>
 
 <div style="height: 30px"></div>
 <div class="container">
     <div class="row">
+        <!--Sector start -->
+        <%# @sectors.each do |s| %>
         <div class="col-md-8">
-            <h3>Education and Training</h3>
+            <h3>HR Learning and Development</h3>
             <ul>
-                <% @private_services.each do |type, service_data| %>
+                <% @public_services.each do |type, service_data| %>
                 <li class="list-unstyled">
                     <h4><%= type %></h4>
                     <% service_data.each do |sd| %>
@@ -26,10 +27,10 @@
                     <% end %>
                 <% end %>
             <ul>
-                   
         </div>
+        <%# end %>
+    <!-- Sector end -->
     </div>
 </div>
 
 <div style="height: 80px"></div>
-
