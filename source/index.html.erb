@@ -1,34 +1,33 @@
-
-        <div class="banner">
-            <div class='banner-inner'>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-5">
-                            <p>
-                               <strong> Committed to the transformation of organisations, community and individual. </strong>
-                            </p>
-                            <p id="banner-box"><small>At Excelsis we are committed to making a difference in your world of performance, productivity and customer satisfaction.</small></p>
-                            <li><% link_to('/service.html', { :class => 'btn btn-white btn-lg'}) do %>View Services<% end %></li>
-                        </div>
-                    </div>
+<div class="banner">
+    <div class='banner-inner'>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <p>
+                       <strong> Committed to the transformation of organisations, community and individual. </strong>
+                    </p>
+                    <p id="banner-box"><small>At Excelsis we are committed to making a difference in your world of performance, productivity and customer satisfaction.</small></p>
+                    <li><% link_to('/service.html', { :class => 'btn btn-white btn-lg'}) do %>View Services<% end %></li>
                 </div>
             </div>
         </div>
-        <div class="intro">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h2 class="section-title"><strong><%= data.contentful.misc['5EQFAxOOUoGwKwoqSsMWuw']['name'].split.first %></strong> <%= data.contentful.misc['5EQFAxOOUoGwKwoqSsMWuw']['name'].split(' ')[1..-1].join(' ') %></h2>
-                        <p>
-                            <%= data.contentful.misc['5EQFAxOOUoGwKwoqSsMWuw']['description'] %>
-                        </p>
-                        <% link_to('/contact.html', { :class => 'btn btn-gray'}) do %>Find out more<% end %>
-                    </div>
-                </div>
+    </div>
+</div>
+<div class="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="section-title"><strong><%= data.contentful.misc['5EQFAxOOUoGwKwoqSsMWuw']['name'].split.first %></strong> <%= data.contentful.misc['5EQFAxOOUoGwKwoqSsMWuw']['name'].split(' ')[1..-1].join(' ') %></h2>
+                <p>
+                    <%= data.contentful.misc['5EQFAxOOUoGwKwoqSsMWuw']['description'] %>
+                </p>
+                <% link_to('/contact.html', { :class => 'btn btn-gray'}) do %>Find out more<% end %>
             </div>
         </div>
+    </div>
+</div>
 
-        <%= partial "layouts/partials/training_category" %>
-        <%= partial "layouts/partials/testimonial" %>
-        <div style="height: 100px;"></div>
-		<%= partial "/layouts/partials/affiliate_company" %>
+<%= partial "layouts/partials/training_category" %>
+<%= partial "layouts/partials/testimonial" %>
+<div style="height: 100px;"></div>
+<%= partial "/layouts/partials/affiliate_company" %>
