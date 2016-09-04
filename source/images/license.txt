@@ -1,0 +1,96 @@
+All images contained in this folder are properly licensed for free commercial use.
+You can find below the sources used to get all images categorized by the folder's name:
+
+
+-- backgrounds:
+
+parallax-bg-1.jpg:	https://pixabay.com/en/architecture-skyscraper-urban-city-768432/
+
+full-bg-1.jpg,
+full-bg-2,
+full-bg-3,
+full-bg-6:	http://www.gratisography.com/
+
+full-bg-7:	https://www.flickr.com/photos/literallydarling/14943690830/
+
+body-bg-1.jpg,
+full-bg-4: 	http://graphicburger.com/3-infinite-wooden-floors/
+body-bg-4.jpg: 	https://pixabay.com/en/furniture-table-objects-tablet-pc-789629/
+
+body-bg-3,
+parallax-bg-3,
+parallax-bg-4: 	http://unplash.com
+
+full-bg-8.jpg:	https://www.flickr.com/photos/anieto2k
+
+shop-fashion-bg-1,
+shop-fashion-bg-1:	https://www.flickr.com/photos/anieto2k
+==============================================
+
+-- patterns:
+
+http://subtlepatterns.com/subarunio
+
+
+==============================================
+
+
+-- prv:
+
+block-img-1.jpg,
+block-img-small-1.jpg,
+block-img-square-1.jpg:https://pixabay.com/en/alps-tree-snow-757731/
+
+block-img-2.jpg,
+block-img-small-2.jpg,
+block-img-square-2.jpg: https://pixabay.com/en/computer-macbook-tablet-editing-767781/
+
+block-img-3,
+block-img-square-3.jpg,
+block-img-small-3.jpg:	https://pixabay.com/en/girls-portrait-sexual-excitement-555653/
+
+block-img-4.jpg,
+block-img-small-4.jpg,
+block-img-square-4.jpg: https://pixabay.com/en/girls-friends-friendship-young-685778/
+
+block-img-5.jpg,
+block-img-small-5.jpg,
+block-img-square-5.jpg: https://pixabay.com/en/photographer-camera-photo-photos-424622/
+
+block-img-6.jpg,
+block-img-small-6.jpg,
+block-img-square-6.jpg: https://pixabay.com/en/boy-portrait-person-children-male-183306/
+
+-- prv/blog:
+
+img-1.jpg: 	flickr.com/vancouverfilmschool
+
+img-2.jpg to img-10.jpg:		firmbee.com
+img-tall-1.jpg, img-tall-2.jpg: 	firmbee.com
+img-wide-1.jpg to img-wide-3.jpg:	firmbee.com
+parallax-blog-1.jpg:			firmbee.com
+parallax-blog-2.jpg:			firmbee.com
+
+
+==============================================
+
+-- prv/news:
+
+img-1.jpg to img-8.jpg:		    	picjumbo.com
+img-small-1.jpg to img-small-8.jpg: 	picjumbo.com
+img-square-1.jpg to img-square-3.jpg: 	picjumbo.com
+
+==============================================
+
+-- prv/work:
+
+img-1.jpg to img-16:		firmbee.com
+img-masonry-1 to img-masonry-6:	firmbee.com
+
+==============================================
+
+-- prv/shop/fashion
+
+img-1.jpg to img-6.jpg:		flickr.com/xecereterys
+
+==============================================
