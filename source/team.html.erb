@@ -18,8 +18,8 @@
             </div>
             <div class="col-md-8">
                 <p>
-                    <span class="dropcap style-3 bg-base-1">L</span>
-                    <%= partner1["profile"]%>
+                    <span class="dropcap style-3 bg-base-1"> <%= partner1["profile"][0] %></span>
+                    <%= partner1["profile"][1..-1] %>
                 </p>
             </div>
         </div>
@@ -46,8 +46,8 @@
             </div>
             <div class="col-md-8">
                 <p>
-                    <span class="dropcap style-3 bg-base-1">L</span>
-                    <%= partner2["profile"]%>
+                    <span class="dropcap style-3 bg-base-1"><%= partner2["profile"][0] %></span>
+                    <%= partner2["profile"][1..-1] %>
                 </p>
             </div>
         </div>
@@ -67,7 +67,7 @@
                     <div class="block-body">
                         <h3 class="block-title">
                             <span><%= partner3["firstname"]%> <%= partner3["lastname"]%></span>
-                            <small><%= "Partner" %></small>
+                            <small><%= "Director" %></small>
                         </h3>
                     </div>
                 </div>
