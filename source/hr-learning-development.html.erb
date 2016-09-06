@@ -14,13 +14,19 @@
         </div>
     </section>
 
-    <% @private_services.each do |type, service_data| %>
-    <section class="slice sct-color-1">
+    <% @private_services.each_with_index do |(type, service_data), index| %>
+    <% if index.even? %>
+        <section class="slice sct-color-1">
+    <% else %>
+        <section class="slice sct-color-2">
+    <% end %>    
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <img src="images/prv/block-img-1.jpg" class="img-responsive">                            
-                </div>
+                <% if index.even? %>
+                    <div class="col-md-4">
+                        <img src="images/prv/block-img-1.jpg" class="img-responsive">                            
+                    </div>
+                <% end %>  
                 <div class="col-md-8">
                     <div class="section-title-wrapper style-1 v1">
                         <h3 class="section-title section-title-sm left">
@@ -43,71 +49,12 @@
                     <% end %>
                     <a href="contact-1.html" class="btn btn-b-base-1 mt-20">Find out more</a>
                 </div>
+                <% if not index.even? %>
+                    <div class="col-md-4">
+                        <img src="images/prv/block-img-2.jpg" class="img-responsive">                            
+                    </div>
+                <% end %>  
             </div>
         </div>
     </section>
     <% end %>
-    
-
-    <section class="slice sct-color-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="images/prv/block-img-1.jpg" class="img-responsive">                            
-                </div>
-                <div class="col-md-8">
-                     <div class="section-title-wrapper style-1 v1">
-                        <h3 class="section-title section-title-sm left">
-                            <span>HR Training</span>
-                        </h3>
-                    </div>
-                    <p>
-                        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. Over set was for him own gathering for form forth Blessed also shall and, moved together it earth be.
-                    </p>    
-                    <a href="contact-1.html" class="btn btn-b-base-1 mt-20">Find out more</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="slice sct-color-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                     <div class="section-title-wrapper style-1 v1">
-                        <h3 class="section-title section-title-sm left">
-                            <span>Government Initiative</span>
-                        </h3>
-                    </div>
-                    <p>
-                        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. Over set was for him own gathering for form forth Blessed also shall and, moved together it earth be.
-                    </p>    
-                    <a href="contact-1.html" class="btn btn-b-base-1 mt-20">Find out more</a>
-                </div>
-                <div class="col-md-4">
-                    <img src="images/prv/block-img-2.jpg" class="img-responsive">  
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="slice sct-color-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="images/prv/block-img-3.jpg" class="img-responsive">                            
-                </div>
-                <div class="col-md-8">
-                     <div class="section-title-wrapper style-1 v1">
-                        <h3 class="section-title section-title-sm left">
-                            <span>Bespoke Training</span>
-                        </h3>
-                    </div>
-                    <p>
-                        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. Over set was for him own gathering for form forth Blessed also shall and, moved together it earth be.
-                    </p>    
-                    <a href="contact-1.html" class="btn btn-b-base-1 mt-20">Find out more</a>
-                </div>
-            </div>
-        </div>
-    </section>
