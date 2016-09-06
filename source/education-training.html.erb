@@ -1,4 +1,5 @@
-<section class="slice sct-color-1">
+   <% @public_services = data["contentful"]["service"].values.find_all{|serv|serv["sector"] == "public"}.group_by{|v|v["type"]} %>
+    <section class="slice sct-color-1">
         <div class="container">
             <div class="section-title-wrapper style-1 v1 no-margin">
                 <h3 class="section-title center">
@@ -13,90 +14,47 @@
         </div>
     </section>
 
-    <section class="slice sct-color-2">
+    <% @public_services.each_with_index do |(type, service_data), index| %>
+    <% if index.even? %>
+        <section class="slice sct-color-1">
+    <% else %>
+        <section class="slice sct-color-2">
+    <% end %>    
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <img src="images/prv/block-img-1.jpg" class="img-responsive">                            </div>
-                <div class="col-md-8">
-                     <div class="section-title-wrapper style-1 v1">
+                <% if index.even? %>
+                    <div class="col-md-6">
+                        <img src="images/prv/block-img-1.jpg" class="img-responsive">                            
+                    </div>
+                <% end %>  
+                <div class="col-md-6">
+                    <div class="section-title-wrapper style-1 v1">
                         <h3 class="section-title section-title-sm left">
-                            <span>24+ Loan Programme</span>
+                            <span><%= type %></span>
                         </h3>
                     </div>
-                    <p>
-                        <li>Business Administration Level 3 & 4</li>
-                        <li>PTTLLS, DTTLLS</li>
-                        <li>In Health and Social Care</li>
-                        <li>IT Software development and Testing</li>
-                    </p>    
+                    <% service_data.each do |sd| %>
+                    <ul>
+                        <li>
+                            <%= sd["name"] %>
+                            <% if not sd["description"].nil? %>
+                                <ul>
+                                    <li>
+                                        <%= sd["description"] %>
+                                    </li>
+                                </ul>
+                            <%end%>
+                        </li>
+                    </ul>
+                    <% end %>
                     <a href="contact-1.html" class="btn btn-b-base-1 mt-20">Find out more</a>
                 </div>
+                <% if not index.even? %>
+                    <div class="col-md-6">
+                        <img src="images/prv/block-img-2.jpg" class="img-responsive">                            
+                    </div>
+                <% end %>  
             </div>
         </div>
     </section>
-
-    <section class="slice sct-color-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                     <div class="section-title-wrapper style-1 v1">
-                        <h3 class="section-title section-title-sm left">
-                            <span>16 – 18 Study programme</span>
-                        </h3>
-                    </div>
-                    <p>
-                        <li>Vocational Skills:- Business Admin, Customer Service, ITQ/ICT, Employability</li>
-                        <li>Functional Skills:- Maths and English from E3 to GCSE level</li>
-                    </p>    
-                    <a href="contact-1.html" class="btn btn-b-base-1 mt-20">Find out more</a>
-                </div>
-                <div class="col-md-4">
-                    <img src="images/prv/block-img-2.jpg" class="img-responsive">                            
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="slice sct-color-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="images/prv/block-img-3.jpg" class="img-responsive">                            
-                </div>
-                <div class="col-md-8">
-                     <div class="section-title-wrapper style-1 v1">
-                        <h3 class="section-title section-title-sm left">
-                            <span>Apprenticeship and Traineeships</span>
-                        </h3>
-                    </div>
-                    <p>
-                        <li>Recruitment</li>
-                        <li>Employability and motivational training</li>
-                        <li>End to end programme</li>
-                    </p>    
-                    <a href="contact-1.html" class="btn btn-b-base-1 mt-20">Find out more</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="slice sct-color-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                     <div class="section-title-wrapper style-1 v1">
-                        <h3 class="section-title section-title-sm left">
-                            <span>Welfare (Back to work) programmes</span>
-                        </h3>
-                    </div>
-                    <p>
-                        <li>End to End programme</li>
-                        <li>Employer Engagement</li>
-                    </p>    
-                    <a href="contact-1.html" class="btn btn-b-base-1 mt-20">Find out more</a>
-                </div>
-                <div class="col-md-4">
-                    <img src="images/prv/block-img-2.jpg" class="img-responsive">                            
-                </div>
-            </div>
-        </div>
-    </section>
+    <% end %>
