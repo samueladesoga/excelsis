@@ -11927,7 +11927,6 @@ body {
 .client-logo.style-3 {
   background: transparent;
   border-radius: 2px;
-  border: 1px solid #f1f1f1;
 }
 @media (max-width: 991px) {
   .client-logo {
