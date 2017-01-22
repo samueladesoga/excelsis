@@ -45,7 +45,7 @@ Dotenv.load
 
 activate :s3_sync do |s3_sync|
   s3_sync.bucket                     = ENV['BUCKET_NAME'] # The name of the S3 bucket you are targetting. This is globally unique.
-  s3_sync.region                     = 'eu-west-1'     # The AWS region for your bucket.
+  s3_sync.region                     = 'eu-west-2'     # The AWS region for your bucket.
   s3_sync.aws_access_key_id          = ENV['ACCESS_KEY_ID']
   s3_sync.aws_secret_access_key      = ENV['SECRET_ACCESS_KEY']
   s3_sync.delete                     = true # We delete stray files by default.
