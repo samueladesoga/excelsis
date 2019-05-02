@@ -11,6 +11,11 @@ jobs:
       - checkout
 
       - run:
+          name: Update Bundler
+          working_directory: .
+          command: bundle update --bundler
+
+      - run:
           name: Install Ruby dependencies
           working_directory: .
           command: bundle install
