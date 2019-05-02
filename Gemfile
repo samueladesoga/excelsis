@@ -1,18 +1,11 @@
-# If you do not have OpenSSL installed, update
-# the following line to use "http://" instead
 source 'https://rubygems.org'
-ruby "2.2.5"
+ruby "2.5.3"
 
-gem 'middleman', '~>3.4.0'
-
-# Contentful integration
+gem 'middleman', '~> 4.2'
+gem 'middleman-autoprefixer', '~> 2.7'
+gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
+gem 'wdm', '~> 0.1', platforms: [:mswin, :mingw]
 gem 'contentful_middleman'
-gem 'middleman-s3_sync'
-
-# Hide secrets in .env file
-gem 'dotenv'
-
-group :development do
-gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
-gem 'wdm', '>= 0.1.0' if Gem.win_platform?
-end
+gem 'middleman-dotenv'
+gem 'middleman-s3_sync', '~> 4.0.1.rc.3'
+gem 'mime-types', '~> 3.0.0'
