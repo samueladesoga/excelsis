@@ -1,5 +1,5 @@
 # Load .env file
-Dotenv.load
+
 
 ###
 # Compass
