@@ -1,0 +1,27 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.5.3-node
+
+    steps:
+      - checkout
+
+      - run:
+          name: Install Ruby dependencies
+          working_directory: .
+          command: bundle install
+      - run:
+          name: Rebuild from contentful
+          working_directory: .
+          command: bundle exec middleman contentful
+
+      - run:
+          name: Build Middleman site
+          working_directory: .
+          command: bundle exec middleman build
+      - run:
+          name: Sync to s3
+          working_directory: .
+          command: bundle exec middleman s3_sync
